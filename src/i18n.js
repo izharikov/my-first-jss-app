@@ -20,8 +20,8 @@ export default function i18nInit(language, dictionary) {
       useCookie: false, // using URLs and Sitecore to store language context, don't need a cookie
 
       interpolation: {
-        escapeValue: false, // not needed for react
-      },
+        escapeValue: false // not needed for react
+      }
     };
 
     if (dictionary) {
@@ -29,10 +29,10 @@ export default function i18nInit(language, dictionary) {
       // so we do not want a backend, because we already know all possible keys
       options.resources = {};
       options.resources[language] = {
-        translation: dictionary,
+        translation: dictionary
       };
 
-      i18n.use(reactI18nextModule).init(options, (error) => {
+      i18n.use(reactI18nextModule).init(options, error => {
         if (error) reject(error);
         resolve();
       });
@@ -45,19 +45,19 @@ export default function i18nInit(language, dictionary) {
 
       options.backend = {
         loadPath: dictionaryServicePath,
-        parse: (data) => {
+        parse: data => {
           const parsedData = JSON.parse(data);
           if (parsedData.phrases) {
             return parsedData.phrases;
           }
           return parsedData;
-        },
+        }
       };
 
       i18n
         .use(fetchBackend)
         .use(reactI18nextModule)
-        .init(options, (error) => {
+        .init(options, error => {
           if (error) reject(error);
 
           resolve();

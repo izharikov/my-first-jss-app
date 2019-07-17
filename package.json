@@ -43,10 +43,13 @@
     "bootstrap": "~4.2.1",
     "graphql": "~14.0.2",
     "graphql-tag": "~2.10.0",
+    "husky": "^3.0.0",
     "i18next": "~13.1.2",
     "i18next-fetch-backend": "~2.0.0",
     "isomorphic-fetch": "~2.2.1",
+    "lint-staged": "^9.2.0",
     "node-sass": "^4.12.0",
+    "prettier": "^1.18.2",
     "react": "~16.7.0",
     "react-apollo": "~2.3.3",
     "react-dom": "~16.7.0",
@@ -75,6 +78,12 @@
     "webpack": "4.19.1",
     "webpack-cli": "~3.2.1"
   },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
+  },
   "scripts": {
     "jss": "jss",
     "start": "npm-run-all --serial bootstrap:disconnected --parallel start:react start:proxy start:watch-components",
@@ -90,6 +99,7 @@
     "bootstrap:disconnected": "node scripts/bootstrap.js --disconnected",
     "graphql:update": "node -r babel-register ./scripts/update-graphql-fragment-data.js",
     "test": "react-scripts test --env=jsdom",
+    "precommit": "lint-staged",
     "eject": "react-scripts eject"
   },
   "browserslist": [

@@ -1,5 +1,8 @@
 import React from 'react';
-import { Placeholder, VisitorIdentification } from '@sitecore-jss/sitecore-jss-react';
+import {
+  Placeholder,
+  VisitorIdentification
+} from '@sitecore-jss/sitecore-jss-react';
 import Helmet from 'react-helmet';
 
 // Using bootstrap is completely optional. It's used here to provide a clean layout for samples,
@@ -11,7 +14,10 @@ const Layout = ({ route }) => (
   <React.Fragment>
     <Helmet>
       <title>
-        {(route.fields && route.fields.pageTitle && route.fields.pageTitle.value) || 'Page'}
+        {(route.fields &&
+          route.fields.pageTitle &&
+          route.fields.pageTitle.value) ||
+          'Page'}
       </title>
     </Helmet>
     <VisitorIdentification />

@@ -1,5 +1,7 @@
 {
     "files.exclude": {
         "**/node_modules": true
-    }
+    },
+    "prettier.singleQuote": true,
+    "prettier.bracketSpacing": true
 }

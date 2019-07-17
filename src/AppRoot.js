@@ -14,7 +14,7 @@ import RouteHandler from './RouteHandler';
 export const routePatterns = [
   '/:lang([a-z]{2}-[A-Z]{2})/:sitecoreRoute*',
   '/:lang([a-z]{2})/:sitecoreRoute*',
-  '/:sitecoreRoute*',
+  '/:sitecoreRoute*'
 ];
 
 // wrap the app with:
@@ -23,14 +23,21 @@ export const routePatterns = [
 // SitecoreContext: provides component resolution and context services via withSitecoreContext
 // Router: provides a basic routing setup that will resolve Sitecore item routes and allow for language URL prefixes.
 const AppRoot = ({ path, Router, graphQLClient }) => {
-  const routeRenderFunction = (props) => <RouteHandler route={props} />;
+  const routeRenderFunction = props => <RouteHandler route={props} />;
   return (
     <ApolloProvider client={graphQLClient}>
-      <SitecoreContext componentFactory={componentFactory} contextFactory={SitecoreContextFactory}>
+      <SitecoreContext
+        componentFactory={componentFactory}
+        contextFactory={SitecoreContextFactory}
+      >
         <Router location={path} context={{}}>
           <Switch>
-            {routePatterns.map((routePattern) => (
-              <Route key={routePattern} path={routePattern} render={routeRenderFunction} />
+            {routePatterns.map(routePattern => (
+              <Route
+                key={routePattern}
+                path={routePattern}
+                render={routeRenderFunction}
+              />
             ))}
           </Switch>
         </Router>

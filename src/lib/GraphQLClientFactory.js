@@ -2,7 +2,10 @@
 
 import 'isomorphic-fetch';
 import { ApolloClient } from 'apollo-client';
-import { InMemoryCache, IntrospectionFragmentMatcher } from 'apollo-cache-inmemory';
+import {
+  InMemoryCache,
+  IntrospectionFragmentMatcher
+} from 'apollo-cache-inmemory';
 
 /*
   INTROSPECTION DATA
@@ -42,14 +45,14 @@ export default function(endpoint, ssr, initialCacheState) {
 
   const cache = new InMemoryCache({
     fragmentMatcher: new IntrospectionFragmentMatcher({
-      introspectionQueryResultData,
-    }),
+      introspectionQueryResultData
+    })
   });
 
   return new ApolloClient({
     ssrMode: ssr,
     ssrForceFetchDelay: 100,
     link,
-    cache: cache.restore(initialCacheState),
+    cache: cache.restore(initialCacheState)
   });
 }

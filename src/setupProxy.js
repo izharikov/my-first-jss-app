@@ -1,7 +1,7 @@
 const proxy = require('http-proxy-middleware');
 const config = require('./temp/config');
 
-module.exports = (app) => {
+module.exports = app => {
   const isDisconnected = /localhost/i.test(config.sitecoreApiHost);
 
   if (isDisconnected) {

@@ -45,9 +45,15 @@ if (__JSS_STATE__) {
 // Apollo supports SSR of GraphQL queries, so like JSS SSR, it has an object we can pre-hydrate the client cache from
 // to avoid needing to re-run GraphQL queries after the SSR page loads
 const initialGraphQLState =
-  __JSS_STATE__ && __JSS_STATE__.APOLLO_STATE ? __JSS_STATE__.APOLLO_STATE : null;
+  __JSS_STATE__ && __JSS_STATE__.APOLLO_STATE
+    ? __JSS_STATE__.APOLLO_STATE
+    : null;
 
-const graphQLClient = GraphQLClientFactory(config.graphQLEndpoint, false, initialGraphQLState);
+const graphQLClient = GraphQLClientFactory(
+  config.graphQLEndpoint,
+  false,
+  initialGraphQLState
+);
 
 /*
   App Rendering
