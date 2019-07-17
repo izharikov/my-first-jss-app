@@ -1,0 +1,11 @@
+{
+	"id": "nav-item-1",
+	"displayName": "Navigation item #1",
+	"template": "application-navigation-item",
+	"fields": {
+		"link": {
+			"href": "/",
+            "text": "Home"
+		}
+    }
+}

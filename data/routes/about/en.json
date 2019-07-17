@@ -1,0 +1,36 @@
+{
+	"id": "about",
+	"fields": {
+		"pageTitle": "About"
+	},
+	"placeholders": {
+		"jss-header": [
+			{
+				"componentName": "Header",
+				"fields": {
+					"pageTitle": "Welcome to Sitecore JSS",
+					"navigationLinks": [
+						{
+							"id": "nav-item-1"
+						},	
+						{
+							"id": "nav-item-2"
+						}
+					],
+					"singleLink": {
+						"href": "https://www.sitecore.com",
+						"text": "Link to Sitecore"
+					}
+				}
+			}
+		],
+		"jss-footer": [
+			{
+				"componentName": "Footer",
+				"fields": {
+					"text": "Footer text"
+				}
+			}
+		]
+	}
+}
