@@ -1,3 +1,20 @@
-.active_link{
+.active_link {
     display: none;
+}
+
+.header{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+
+    .image{
+        grid-column: span 3;
+    }
+
+    .content{
+        grid-column: span 6;
+    }
+
+    .action_link{
+        grid-column: span 3;
+    }
 }

@@ -13,7 +13,8 @@ export default function (manifest) {
     fields: [
       { name: 'pageTitle', type: CommonFieldTypes.SingleLineText },
       { name: 'navigationLinks', type: CommonFieldTypes.ContentList },
-      { name: 'singleLink', type: CommonFieldTypes.GeneralLink }
+      { name: 'singleLink', type: CommonFieldTypes.GeneralLink },
+      { name: 'headerLogo', type: CommonFieldTypes.Image },
     ],
     /*
     If the component implementation uses <Placeholder> or withPlaceholder to expose a placeholder,

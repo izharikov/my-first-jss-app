@@ -20,6 +20,10 @@
 					"singleLink": {
 						"href": "https://www.sitecore.com",
 						"text": "Link to Sitecore"
+					},
+					"headerLogo": {
+						"src": "/data/media/img/sc_logo.png",
+						"alt": "Sitecore Logo"
 					}
 				}
 			}

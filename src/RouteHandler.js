@@ -8,7 +8,7 @@ import {
 import SitecoreContextFactory from './lib/SitecoreContextFactory';
 import { dataFetcher } from './dataFetcher';
 import config from './temp/config';
-import Layout from './Layout';
+import Layout from './layouts/main';
 import NotFound from './NotFound';
 
 // Dynamic route handler for Sitecore items.

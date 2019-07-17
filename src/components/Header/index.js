@@ -1,19 +1,23 @@
 import React from 'react';
-import { Text, Link } from '@sitecore-jss/sitecore-jss-react';
+import { Text, Image } from '@sitecore-jss/sitecore-jss-react';
 import { RouterLinkList } from '../core/LinkList';
 
 import styles from './index.module.scss';
 
 const Header = ({ fields }) => {
+  console.log(styles);
   return (
     <header className={styles.header}>
-      <h1>
-        <Text field={fields.pageTitle} />
-      </h1>
-      <RouterLinkList
-        links={fields.navigationLinks}
-        activeClassName={styles.active_link}
-      />
+      <Image field={fields.headerLogo} className={styles.image} />
+      <div className={styles.content}>
+        <p>
+          <Text field={fields.pageTitle} />
+        </p>
+        <RouterLinkList
+          links={fields.navigationLinks}
+          activeClassName={styles.active_link}
+        />
+      </div>
     </header>
   );
 };
