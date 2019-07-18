@@ -28,6 +28,14 @@
 				}
 			}
 		],
+		"jss-main": [
+			{
+				"componentName": "ImagesCarousel",
+				"fields": {
+					"text": "Footer text"
+				}
+			}
+		],
 		"jss-footer": [
 			{
 				"componentName": "Footer",

@@ -10,16 +10,19 @@ export const RouterLink = ({ link, children, ...otherProps }) => {
   );
 };
 
-export const RouterLinkList = ({ links, ...otherProps }) => {
+export const RouterLinkList = ({
+  links,
+  hoc = component => component,
+  ...otherProps
+}) => {
   return (
     <React.Fragment>
-      {links.map(navLinkField => (
-        <RouterLink
-          key={navLinkField.fields.link.value.href}
-          link={navLinkField.fields.link}
-          {...otherProps}
-        />
-      ))}
+      {links.map(navLinkField =>
+        hoc(
+          <RouterLink link={navLinkField.fields.link} {...otherProps} />,
+          navLinkField.fields.link.value.href
+        )
+      )}
     </React.Fragment>
   );
 };
