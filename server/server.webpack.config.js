@@ -19,6 +19,20 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        resolve: {
+          extensions: ['.js', '.jsx'],
+        },
+        use: {
+          loader: 'babel-loader',
+          options: {
+            babelrc: false,
+            presets: [env, reactApp],
+          },
+        },
+      },
+      {
         test: /\.m?jsx?$/,
         exclude: /node_modules/,
         use: {
@@ -53,6 +67,6 @@ module.exports = {
           loader: 'null-loader',
         },
       },
-    ],
+    ]
   },
 };
