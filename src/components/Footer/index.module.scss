@@ -1,1 +1,21 @@
-.class {}
+.footer {
+    .footer_logo {
+        padding: 10px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .link_columns {
+        padding: 10px;
+    }
+
+    @for $i from 2 through 4 {
+        .columns-#{$i}{
+            display: grid;
+            grid-template-columns: repeat(#{$i}, 1fr)
+        }
+    }
+}

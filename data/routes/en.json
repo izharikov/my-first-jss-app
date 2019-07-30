@@ -40,7 +40,10 @@
 			{
 				"componentName": "Footer",
 				"fields": {
-					"text": "Footer text"
+					"footerLogo": {
+						"src": "/data/media/img/sc_logo.png",
+						"alt": "Sitecore Logo"
+					}
 				}
 			}
 		]

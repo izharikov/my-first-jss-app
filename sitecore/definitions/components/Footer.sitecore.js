@@ -11,7 +11,7 @@ export default function(manifest) {
     name: 'Footer',
     icon: SitecoreIcon.DocumentTag,
     fields: [
-      { name: 'text', type: CommonFieldTypes.SingleLineText },
+      { name: 'footerLogo', type: CommonFieldTypes.Image },
     ],
     /*
     If the component implementation uses <Placeholder> or withPlaceholder to expose a placeholder,

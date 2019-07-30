@@ -1,7 +1,7 @@
-.vertical-middle {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+@import "main/scss/vars.scss";
+
+* {
+    color: var(--main-text-color);
 }
 
 a{
@@ -10,6 +10,17 @@ a{
 
 img {
     width: 100%;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+.vertical-middle {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .container {

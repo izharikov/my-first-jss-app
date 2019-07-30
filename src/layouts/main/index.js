@@ -21,7 +21,9 @@ const Layout = ({ route }) => (
     <VisitorIdentification />
     <div>
       <Placeholder name="jss-header" rendering={route} />
-      <Placeholder name="jss-main" rendering={route} />
+      <main>
+        <Placeholder name="jss-main" rendering={route} />
+      </main>
       <Placeholder name="jss-footer" rendering={route} />
     </div>
   </React.Fragment>
